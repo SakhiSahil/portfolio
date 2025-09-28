@@ -1,0 +1,303 @@
+
+<div layout:decorate="~{layout}">
+    <div layout:fragment="content">
+        <!-- Hero Section (Home) -->
+        <section id="home" class="hero-section">
+            <div class="container">
+                <div class="row align-items-center min-vh-100">
+                    <div class="col-lg-6 hero-content fade-in">
+                        <h1 class="hero-title">Hello, I'm Ghulam Sakhi Sahil</h1>
+                        <h3 class="hero-subtitle">Full Stack Developer & Software Engineer</h3>
+                        <p class="mb-6">I create exceptional digital experiences that blend innovative technology with stunning design.</p>
+                        <div class="hero-buttons">
+                            <a href="/projects" class="btn btn-primary">View My Work</a>
+                            <a href="/contact" class="btn btn-outline-primary">Contact Me</a>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 fade-in">
+                        <img src="/image/hero_section.png" alt="Ghulam Sakhi Sahil" class="img-fluid">
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+</div>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="/">DEVLYFE</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <div class="navbar-nav ms-auto">
+                    <a class="nav-link" href="#home">Home</a>
+                    <a class="nav-link" href="#about">About</a>
+                    <a class="nav-link" href="#skills">Skills</a>
+                    <a class="nav-link" href="#experience">Experience</a>
+                    <a class="nav-link" href="#projects">Projects</a>
+                    <a class="nav-link" href="#contact">Contact</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- About Section -->
+    <section id="about" class="section-padding about-section">
+        <div class="container">
+            <div class="section-title fade-in">
+                <h2>About Me</h2>
+                <p>Get to know me better</p>
+            </div>
+            <div class="row about-content">
+                <div class="col-lg-6 about-image fade-in">
+                    <img src="/image/hero.png" alt="About Me" class="img-fluid rounded">
+                </div>
+                <div class="col-lg-6 about-text fade-in">
+                    <h3>Crafting Digital Excellence</h3>
+                    <p>I'm a passionate full-stack developer with over 5 years of experience creating digital solutions that make a difference. My journey in tech started when I built my first website at 16, and I've been hooked ever since.</p>
+                    <p>I specialize in building responsive, user-friendly applications using the latest technologies. My approach combines technical expertise with creative design thinking to deliver solutions that not only work flawlessly but also provide exceptional user experiences.</p>
+                    <p>When I'm not coding, you can find me hiking, reading tech blogs, or contributing to open-source projects. I believe in continuous learning and staying ahead of the curve in the ever-evolving tech landscape.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="section-padding skills-section">
+        <div class="container">
+            <div class="section-title fade-in">
+                <h2>My Skills</h2>
+                <p>Technologies I work with</p>
+            </div>
+            <div class="row">
+                <div class="col-lg-6 fade-in">
+                    <div class="skill-item" th:each="skill : ${skills}">
+                        <div class="skill-header">
+                            <span class="skill-name" th:text="${skill.name}">Skill Name</span>
+                            <span class="skill-percentage" th:text="${skill.percentage} + '%'">95%</span>
+                        </div>
+                        <div class="progress">
+                            <div class="progress-bar" role="progressbar" th:attr="style='width: ' + ${skill.percentage} + '%;'" 
+                                th:aria-valuenow="${skill.percentage}" aria-valuemin="0" aria-valuemax="100"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 fade-in">
+                    <div class="skill-item">
+                        <div class="skill-header">
+                            <span class="skill-name">Problem Solving</span>
+                            <span class="skill-percentage">95%</span>
+                        </div>
+                        <div class="progress">
+                            <div class="progress-bar" role="progressbar" style="width: 95%;" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-header">
+                            <span class="skill-name">Team Collaboration</span>
+                            <span class="skill-percentage">90%</span>
+                        </div>
+                        <div class="progress">
+                            <div class="progress-bar" role="progressbar" style="width: 90%;" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-header">
+                            <span class="skill-name">Project Management</span>
+                            <span class="skill-percentage">85%</span>
+                        </div>
+                        <div class="progress">
+                            <div class="progress-bar" role="progressbar" style="width: 85%;" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-header">
+                            <span class="skill-name">Communication</span>
+                            <span class="skill-percentage">90%</span>
+                        </div>
+                        <div class="progress">
+                            <div class="progress-bar" role="progressbar" style="width: 90%;" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="section-padding experience-section">
+        <div class="container">
+            <div class="section-title fade-in">
+                <h2>Work Experience</h2>
+                <p>My professional journey</p>
+            </div>
+            <div class="timeline">
+                <div class="timeline-item fade-in" th:each="exp : ${experiences}">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-date" th:text="${exp.period}">2021-Present</div>
+                        <h4 class="timeline-position" th:text="${exp.position}">Senior Full Stack Developer</h4>
+                        <div class="timeline-company" th:text="${exp.company}">Tech Innovations Inc.</div>
+                        <p th:text="${exp.description}">Led development of enterprise applications, improved system performance by 40%, mentored junior developers.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="section-padding projects-section">
+        <div class="container">
+            <div class="section-title fade-in">
+                <h2>My Projects</h2>
+                <p>Some of my recent work</p>
+            </div>
+            <div class="row">
+                <div class="col-md-6 col-lg-4 mb-4 fade-in" th:each="project : ${projects}">
+                    <div class="project-card card">
+                        <img th:src="${project.imageUrl}" class="card-img-top project-img" alt="Project Image">
+                        <div class="project-card-body">
+                            <h5 class="project-title" th:text="${project.title}">Project Title</h5>
+                            <p class="project-description" th:text="${project.description}">Project description goes here.</p>
+                            <div class="project-tags">
+                                <span class="project-tag" th:each="tech : ${project.technologies}" th:text="${tech}">React</span>
+                            </div>
+                            <a href="#" class="project-link">View Project <i class="fas fa-arrow-right ms-2"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section-padding contact-section">
+        <div class="container">
+            <div class="section-title fade-in">
+                <h2>Get In Touch</h2>
+                <p>Let's work together</p>
+            </div>
+            <div class="row">
+                <div class="col-lg-8 mx-auto">
+                    <div class="contact-form fade-in">
+                        <form th:action="@{/contact}" method="post">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <input type="text" name="name" class="form-control" placeholder="Your Name" required>
+                                </div>
+                                <div class="col-md-6">
+                                    <input type="email" name="email" class="form-control" placeholder="Your Email" required>
+                                </div>
+                            </div>
+                            <textarea name="message" class="form-control" rows="5" placeholder="Your Message" required></textarea>
+                            <button type="submit" class="btn btn-primary btn-lg w-100">Send Message</button>
+                        </form>
+                        <div th:if="${success}" class="alert alert-success mt-3" role="alert">
+                            Thank you for your message! I'll get back to you soon.
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row mt-5">
+                <div class="col-md-4 fade-in">
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h5>Location</h5>
+                            <p>Herat, Turghundi, AF</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 fade-in">
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h5>Email</h5>
+                            <p>gh.sakhisahil@gmail.com</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 fade-in">
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h5>Phone</h5>
+                            <p>+93 (798) 558-443</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-github"></i></a>
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+                <p class="copyright">&copy; 2023 DEVLYFE. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Animation for elements when they come into view
+        document.addEventListener('DOMContentLoaded', function() {
+            const fadeElements = document.querySelectorAll('.fade-in');
+            
+            const fadeInObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, { threshold: 0.1 });
+            
+            fadeElements.forEach(element => {
+                fadeInObserver.observe(element);
+            });
+            
+            // Smooth scrolling for navigation links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href');
+                    if (targetId === '#') return;
+                    
+                    const targetElement = document.querySelector(targetId);
+                    if (targetElement) {
+                        window.scrollTo({
+                            top: targetElement.offsetTop - 80,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+            
+            // Navbar background on scroll
+            window.addEventListener('scroll', function() {
+                const navbar = document.querySelector('.navbar');
+                if (window.scrollY > 50) {
+                    navbar.style.boxShadow = '0 4px 20px rgba(0, 0, 0, 0.1)';
+                    navbar.style.padding = '0.5rem 0';
+                } else {
+                    navbar.style.boxShadow = '0 4px 20px rgba(0, 0, 0, 0.05)';
+                    navbar.style.padding = '1rem 0';
+                }
+            });
+        });
+    </script>
+</body>
+</html>

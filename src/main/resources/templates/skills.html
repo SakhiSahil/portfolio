@@ -1,0 +1,65 @@
+<div layout:decorate="~{layout}">
+    <div layout:fragment="content">
+        <!-- Skills Section -->
+        <section class="section-padding skills-section">
+            <div class="container">
+                <div class="section-title fade-in">
+                    <h2>My Skills</h2>
+                    <p>Technologies I work with</p>
+                </div>
+                <div class="row">
+                    <div class="col-lg-6 fade-in">
+                        <div class="skill-item" th:each="skill : ${skills}">
+                            <div class="skill-header">
+                                <span class="skill-name" th:text="${skill.name}">Skill Name</span>
+                                <span class="skill-percentage" th:text="${skill.percentage} + '%'">95%</span>
+                            </div>
+                            <div class="progress">
+                                <div class="progress-bar" role="progressbar" th:attr="style='width: ' + ${skill.percentage} + '%;'" 
+                                    th:aria-valuenow="${skill.percentage}" aria-valuemin="0" aria-valuemax="100"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 fade-in">
+                        <div class="skill-item">
+                            <div class="skill-header">
+                                <span class="skill-name">Problem Solving</span>
+                                <span class="skill-percentage">95%</span>
+                            </div>
+                            <div class="progress">
+                                <div class="progress-bar" role="progressbar" style="width: 95%;" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-header">
+                                <span class="skill-name">Team Collaboration</span>
+                                <span class="skill-percentage">90%</span>
+                            </div>
+                            <div class="progress">
+                                <div class="progress-bar" role="progressbar" style="width: 90%;" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-header">
+                                <span class="skill-name">Project Management</span>
+                                <span class="skill-percentage">85%</span>
+                            </div>
+                            <div class="progress">
+                                <div class="progress-bar" role="progressbar" style="width: 85%;" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-header">
+                                <span class="skill-name">Communication</span>
+                                <span class="skill-percentage">90%</span>
+                            </div>
+                            <div class="progress">
+                                <div class="progress-bar" role="progressbar" style="width: 90%;" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+</div>

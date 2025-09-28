@@ -1,0 +1,24 @@
+<div layout:decorate="~{layout}">
+    <div layout:fragment="content">
+        <!-- Experience Section -->
+        <section class="section-padding experience-section">
+            <div class="container">
+                <div class="section-title fade-in">
+                    <h2>Work Experience</h2>
+                    <p>My professional journey</p>
+                </div>
+                <div class="timeline">
+                    <div class="timeline-item fade-in" th:each="exp : ${experiences}">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <div class="timeline-date" th:text="${exp.period}">2021-Present</div>
+                            <h4 class="timeline-position" th:text="${exp.position}">Senior Full Stack Developer</h4>
+                            <div class="timeline-company" th:text="${exp.company}">Tech Innovations Inc.</div>
+                            <p th:text="${exp.description}">Led development of enterprise applications, improved system performance by 40%, mentored junior developers.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+</div>

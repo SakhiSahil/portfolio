@@ -1,0 +1,69 @@
+<div layout:decorate="~{layout}">
+    <div layout:fragment="content">
+        <!-- Contact Section -->
+        <section class="section-padding contact-section">
+            <div class="container">
+                <div class="section-title fade-in">
+                    <h2>Get In Touch</h2>
+                    <p>Let's work together</p>
+                </div>
+                <div class="row">
+                    <div class="col-lg-8 mx-auto">
+                        <div class="contact-form fade-in">
+                            <form th:action="@{/contact}" method="post">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <input type="text" name="name" class="form-control" placeholder="Your Name" required>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <input type="email" name="email" class="form-control" placeholder="Your Email" required>
+                                    </div>
+                                </div>
+                                <textarea name="message" class="form-control" rows="5" placeholder="Your Message" required></textarea>
+                                <button type="submit" class="btn btn-primary btn-lg w-100">Send Message</button>
+                            </form>
+                            <div th:if="${success}" class="alert alert-success mt-3" role="alert">
+                                Thank you for your message! I'll get back to you soon.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row mt-5">
+                <div class="col-md-4 fade-in">
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h5>Location</h5>
+                            <p>Herat, Turghundi, AF</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 fade-in">
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h5>Email</h5>
+                            <p>gh.sakhisahil@gmail.com</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 fade-in">
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h5>Phone</h5>
+                            <p>+93 (798) 558-443</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            </div>
+        </section>
+    </div>
+</div>

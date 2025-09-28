@@ -1,0 +1,28 @@
+<div layout:decorate="~{layout}">
+    <div layout:fragment="content">
+        <!-- Projects Section -->
+        <section class="section-padding projects-section">
+            <div class="container">
+                <div class="section-title fade-in">
+                    <h2>My Projects</h2>
+                    <p>Some of my recent work</p>
+                </div>
+                <div class="row">
+                    <div class="col-md-6 col-lg-4 mb-4 fade-in" th:each="project : ${projects}">
+                        <div class="project-card card">
+                            <img th:src="${project.imageUrl}" class="card-img-top project-img" alt="Project Image">
+                            <div class="project-card-body">
+                                <h5 class="project-title" th:text="${project.title}">Project Title</h5>
+                                <p class="project-description" th:text="${project.description}">Project description goes here.</p>
+                                <div class="project-tags">
+                                    <span class="project-tag" th:each="tech : ${project.technologies}" th:text="${tech}">React</span>
+                                </div>
+                                <a href="#" class="project-link">View Project <i class="fas fa-arrow-right ms-2"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+</div>
