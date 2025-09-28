@@ -196,6 +196,25 @@ h2::after {
     box-shadow: 0 8px 25px rgba(99, 102, 241, 0.3);
 }
 
+.hero-bounce-wrapper {
+    display: inline-block; 
+    /* fade-in only affects parent, not this wrapper */
+}
+
+.hero-bounce {
+    animation: heroFloat 6s ease-in-out infinite alternate;
+}
+
+@keyframes heroFloat {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-25px);
+    }
+}
+
+
 /* Section Styles */
 .section-padding {
     padding: 100px 0;
